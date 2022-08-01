@@ -1,0 +1,33 @@
+Navigator Error
+An unexpected error occurred on Navigator start-up
+
+Report
+Please report this issue in the anaconda issue tracker
+
+Main Error
+('Forbidden: Request forbidden -- authorization will not help ([GET] https://api.anaconda.org/user -> 403)', 403)
+Traceback
+Traceback (most recent call last):
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\exceptions.py", line 74, in exception_handler
+    return_value = func(*args, **kwargs)
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\app\start.py", line 137, in start_app
+    window = run_app(splash)
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\app\start.py", line 60, in run_app
+    window = MainWindow(splash=splash)
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\widgets\main_window\__init__.py", line 228, in __init__
+    self.api = AnacondaAPI()
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\api\anaconda_api.py", line 1116, in AnacondaAPI
+    ANACONDA_API = _AnacondaAPI()
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\api\anaconda_api.py", line 70, in __init__
+    self._client_api = ClientAPI(config=self.config)
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\api\client_api.py", line 645, in ClientAPI
+    CLIENT_API = _ClientAPI(config=config)
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\api\client_api.py", line 100, in __init__
+    self.reload_client()
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\anaconda_navigator\api\client_api.py", line 314, in reload_client
+    client.user()
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\binstar_client\__init__.py", line 242, in user
+    self._check_response(res)
+  File "C:\Users\mtcanser\Anaconda3\lib\site-packages\binstar_client\__init__.py", line 227, in _check_response
+    raise ErrCls(msg, res.status_code)
+binstar_client.errors.BinstarError: ('Forbidden: Request forbidden -- authorization will not help ([GET] https://api.anaconda.org/user -> 403)', 403)
